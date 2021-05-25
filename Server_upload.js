@@ -13,7 +13,7 @@ const storage=multer.diskStorage({
     },
     filename:(req,file,callback)=>{
         const {originalname}= file; 
-        callback(null,originalname);
+        callback(null,uuid()+"-"+originalname);
     }
 })
 const upload=multer({storage})
